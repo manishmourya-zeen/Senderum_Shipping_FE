@@ -1,1 +1,480 @@
-Privacy policies
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Senderum Smart Checkout</title>
+  <meta name="description" content="How Senderum Smart Checkout collects, uses and protects information for Shopify merchants and their customers.">
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple-primary: #7900ff;
+      --purple-secondary: #5a78ff;
+      --blue-primary: #548cff;
+      --blue-secondary: #dbeafe;
+      --darkblue-primary: #314197;
+      --lightblue-primary: #f6f8ff;
+      --lightblue-secondary: #dee9ff;
+      --gray-primary: #d9d9d9;
+      --lightgray-primary: #f8f8f8;
+      --dimgray-primary: #737373;
+      --blue-black: #0f0f30;
+      --charcoal-blue: #19193a;
+      --label-black: #334155;
+      --green-primary: #34a353;
+      --gradient-primary: linear-gradient(270deg, var(--purple-primary) -117.67%, var(--blue-primary) 100%);
+      --radius: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--label-black);
+      background: var(--lightblue-primary);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--blue-primary); text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+
+    .container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+    /* ---------- Header / Hero ---------- */
+    .hero {
+      position: relative;
+      background: var(--gradient-primary);
+      color: #fff;
+      overflow: hidden;
+      padding-bottom: 96px;
+    }
+    .hero::before,
+    .hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+    .hero::before { width: 420px; height: 420px; top: -160px; right: -120px; }
+    .hero::after { width: 260px; height: 260px; bottom: -120px; left: -80px; }
+
+    .nav {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+    }
+    .nav img { height: 36px; width: auto; display: block; }
+    .nav-link {
+      color: #fff;
+      font-size: 14px;
+      padding: 8px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 999px;
+      transition: background 0.2s ease;
+    }
+    .nav-link:hover { background: rgba(255, 255, 255, 0.15); text-decoration: none; }
+
+    .hero-content { position: relative; z-index: 1; padding-top: 48px; max-width: 760px; }
+    .badge {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .hero p { margin: 0; font-size: 18px; opacity: 0.9; }
+    .updated { margin-top: 22px !important; font-size: 14px !important; opacity: 0.8 !important; }
+
+    /* ---------- Layout ---------- */
+    .layout {
+      position: relative;
+      z-index: 2;
+      margin-top: -56px;
+      display: grid;
+      grid-template-columns: 270px 1fr;
+      gap: 28px;
+      align-items: start;
+      padding-bottom: 64px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 40px rgba(49, 65, 151, 0.08);
+      border: 1px solid var(--lightblue-secondary);
+    }
+
+    /* Table of contents */
+    .toc { position: sticky; top: 24px; padding: 24px; }
+    .toc h2 {
+      margin: 0 0 14px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--dimgray-primary);
+    }
+    .toc ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
+    .toc li { counter-increment: toc; }
+    .toc a {
+      display: flex;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--label-black);
+      font-weight: 400;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .toc a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-weight: 600;
+      color: var(--blue-primary);
+      min-width: 20px;
+    }
+    .toc a:hover { background: var(--lightblue-primary); color: var(--darkblue-primary); text-decoration: none; }
+
+    /* Content */
+    .content { padding: 48px; }
+    .intro {
+      margin: 0 0 40px;
+      padding: 22px 24px;
+      border-radius: 12px;
+      background: var(--lightblue-primary);
+      border-left: 4px solid var(--blue-primary);
+      color: var(--charcoal-blue);
+    }
+
+    section { scroll-margin-top: 24px; }
+    section + section { margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--lightblue-secondary); }
+
+    .section-title { display: flex; align-items: center; gap: 14px; margin: 0 0 18px; }
+    .section-num {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--gradient-primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+    }
+    h2.section-heading {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.3;
+      font-weight: 700;
+      color: var(--blue-black);
+      letter-spacing: -0.01em;
+    }
+    h3 {
+      margin: 26px 0 10px;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--darkblue-primary);
+    }
+    h3 small { font-weight: 400; color: var(--dimgray-primary); font-size: 14px; }
+    p { margin: 0 0 14px; }
+
+    ul.list { list-style: none; margin: 0 0 14px; padding: 0; }
+    ul.list li { position: relative; padding-left: 28px; margin-bottom: 10px; }
+    ul.list li::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+    }
+    ul.list strong { color: var(--blue-black); font-weight: 600; }
+
+    .note {
+      margin: 18px 0 0;
+      padding: 16px 20px;
+      border-radius: 12px;
+      background: #eefbf1;
+      border: 1px solid #c9ecd3;
+      color: #1f5f31;
+      font-weight: 500;
+    }
+
+    .contact-box {
+      margin-top: 8px;
+      padding: 28px;
+      border-radius: 14px;
+      background: var(--gradient-primary);
+      color: #fff;
+    }
+    .contact-box p { margin: 0 0 8px; }
+    .contact-box a { color: #fff; text-decoration: underline; font-weight: 600; }
+    .contact-box .company { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+
+    /* ---------- Footer ---------- */
+    footer { background: var(--blue-black); color: rgba(255, 255, 255, 0.7); padding: 32px 0; font-size: 14px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    footer img { height: 30px; width: auto; display: block; }
+    footer a { color: #fff; }
+
+    .back-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(84, 140, 255, 0.4);
+      font-size: 20px;
+      z-index: 10;
+    }
+    .back-top:hover { text-decoration: none; transform: translateY(-2px); }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 960px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { position: static; }
+      .content { padding: 32px 24px; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .nav img { height: 28px; }
+      .hero { padding-bottom: 80px; }
+      .hero-content { padding-top: 24px; }
+      .hero p { font-size: 16px; }
+      .content { padding: 24px 18px; }
+      h2.section-heading { font-size: 20px; }
+      .section-num { width: 34px; height: 34px; font-size: 14px; border-radius: 10px; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+
+    @media print {
+      .hero { background: #fff; color: var(--blue-black); padding-bottom: 0; }
+      .hero::before, .hero::after, .nav, .toc, .back-top { display: none; }
+      .layout { display: block; margin-top: 0; }
+      .card { box-shadow: none; border: 0; }
+      .section-num { background: var(--blue-primary); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero" id="top">
+    <div class="container">
+      <nav class="nav">
+        <img src="assets/senderum-white-logo-full.svg" alt="Senderum">
+        <a class="nav-link" href="mailto:privacy@senderum.app">Contact us</a>
+      </nav>
+      <div class="hero-content">
+        <span class="badge">Senderum Smart Checkout</span>
+        <h1>Privacy Policy</h1>
+        <p>How we collect, use and protect information when merchants and their customers use the App on Shopify.</p>
+        <p class="updated">Last updated: 7 October 2026</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container layout">
+
+    <aside class="card toc" aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#information-we-collect">Information We Collect</a></li>
+        <li><a href="#how-we-use-information">How We Use Information</a></li>
+        <li><a href="#shopify-and-customer-data">Shopify and Customer Data</a></li>
+        <li><a href="#data-sharing">Data Sharing</a></li>
+        <li><a href="#data-storage-and-retention">Data Storage and Retention</a></li>
+        <li><a href="#data-security">Data Security</a></li>
+        <li><a href="#data-deletion">Data Deletion and Privacy Rights</a></li>
+        <li><a href="#third-party-services">Third-Party Services</a></li>
+        <li><a href="#changes">Changes to This Privacy Policy</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ol>
+    </aside>
+
+    <article class="card content">
+
+      <p class="intro">
+        This Privacy Policy explains how Senderum Smart Checkout ("the App", "we", "us") collects, uses and protects information when merchants install and use the App on their Shopify store, and when their customers use the App during checkout. The App shows shipping rates, delivery options and pickup points at Shopify checkout, based on the shipping services and prices the merchant configures with their Senderum shipping account.
+      </p>
+
+      <section id="information-we-collect">
+        <div class="section-title">
+          <span class="section-num">1</span>
+          <h2 class="section-heading">Information We Collect</h2>
+        </div>
+
+        <h3>Merchant and store information <small>(stored)</small></h3>
+        <p>When a merchant installs and uses the App, we collect and store:</p>
+        <ul class="list">
+          <li><strong>Store details</strong> — the Shopify store domain, the store's primary language, and the access credentials Shopify provides when the App is installed.</li>
+          <li><strong>Senderum account credentials</strong> — the credentials the merchant enters in the App settings to connect their Senderum shipping account.</li>
+          <li><strong>Shipping configuration</strong> — the carriers, shipping services, prices, add-ons, delivery types, recommended carrier, location settings and other App settings the merchant configures.</li>
+          <li><strong>Shopify shipping settings</strong> — a copy of the store's Shopify shipping profiles, locations, shipping zones (countries and regions), shipping methods and rate conditions, used to calculate rates consistently with the store's setup.</li>
+        </ul>
+
+        <h3>Customer checkout information <small>(processed, not stored in our database)</small></h3>
+        <p>When a customer reaches the shipping step at checkout, the App processes:</p>
+        <ul class="list">
+          <li><strong>Shipping destination</strong> — Shopify sends the shipping address for the order (such as country, postal code, city and street address), together with the cart details relevant to shipping and the currency. Depending on the checkout, Shopify may also include the recipient's name and contact details.</li>
+          <li><strong>Pickup-point search</strong> — when a customer chooses pickup delivery, the App uses the customer's shipping country, postal code, city and street to find nearby pickup points and show their approximate distance.</li>
+          <li><strong>Delivery choices</strong> — the delivery type, carrier, shipping service and pickup point the customer selects.</li>
+        </ul>
+        <p class="note">We do not store this customer information in our database. We do not store customer profiles, customer records or order records, and we do not collect payment information.</p>
+      </section>
+
+      <section id="how-we-use-information">
+        <div class="section-title">
+          <span class="section-num">2</span>
+          <h2 class="section-heading">How We Use Information</h2>
+        </div>
+        <p>We use information only to provide the App:</p>
+        <ul class="list">
+          <li>To calculate and display shipping rates and delivery options at checkout.</li>
+          <li>To find nearby pickup points and show their distance from the customer's address.</li>
+          <li>To keep the App's rates aligned with the merchant's Shopify shipping settings and Senderum shipping account.</li>
+          <li>To connect the App securely to the merchant's store, keep it running, troubleshoot problems and provide support.</li>
+        </ul>
+        <p class="note">We do not sell information, use it for advertising, or build profiles of customers.</p>
+      </section>
+
+      <section id="shopify-and-customer-data">
+        <div class="section-title">
+          <span class="section-num">3</span>
+          <h2 class="section-heading">Shopify and Customer Data</h2>
+        </div>
+        <ul class="list">
+          <li>The App accesses store data only through the permissions the merchant approves at installation, and only to provide its features.</li>
+          <li>The delivery choices a customer makes in the App — delivery type, carrier, service, selected pickup point and delivery address details — are saved by Shopify on the checkout and order. This information is stored in the merchant's Shopify store, not in our database.</li>
+          <li>We process customer information on behalf of the merchant, and only to provide shipping and pickup-point options.</li>
+        </ul>
+      </section>
+
+      <section id="data-sharing">
+        <div class="section-title">
+          <span class="section-num">4</span>
+          <h2 class="section-heading">Data Sharing</h2>
+        </div>
+        <p>We share information only where needed to provide the App:</p>
+        <ul class="list">
+          <li><strong>Shopify</strong> — to read store and shipping settings and to return shipping rates to checkout.</li>
+          <li><strong>Senderum shipping services</strong> — to validate the merchant's Senderum account, synchronise the shipping configuration, and look up pickup points (using the customer's shipping country, postal code, city and street).</li>
+          <li><strong>Geoapify</strong> — a geocoding service used to convert the customer's shipping address into map coordinates, so we can calculate the distance to nearby pickup points.</li>
+        </ul>
+        <p>We may also disclose information when required by law. We do not share information with anyone else.</p>
+      </section>
+
+      <section id="data-storage-and-retention">
+        <div class="section-title">
+          <span class="section-num">5</span>
+          <h2 class="section-heading">Data Storage and Retention</h2>
+        </div>
+        <ul class="list">
+          <li>Merchant and store data is kept for as long as the App is installed on the store.</li>
+          <li>Customer checkout information is not stored in our database. It may be recorded in server logs used for troubleshooting.</li>
+        </ul>
+      </section>
+
+      <section id="data-security">
+        <div class="section-title">
+          <span class="section-num">6</span>
+          <h2 class="section-heading">Data Security</h2>
+        </div>
+        <ul class="list">
+          <li>Information passing between Shopify, the App and the services described above is sent over encrypted connections (HTTPS).</li>
+          <li>Requests from Shopify are verified before they are processed.</li>
+          <li>Access to our systems is restricted to authorised personnel.</li>
+        </ul>
+        <p>No system is completely secure, but we take reasonable measures to protect the information we handle.</p>
+      </section>
+
+      <section id="data-deletion">
+        <div class="section-title">
+          <span class="section-num">7</span>
+          <h2 class="section-heading">Data Deletion and Privacy Rights</h2>
+        </div>
+        <ul class="list">
+          <li><strong>Uninstalling the App</strong> — when a merchant uninstalls the App, we delete that store's data from our database, including access credentials, the store record, shipping services and prices, and the synchronised shipping configuration.</li>
+          <li><strong>Shopify privacy requests</strong> — we respond to Shopify's privacy requests. When Shopify asks us to erase a store's data, we delete all remaining data for that store. Because we do not store customer records, customer data and erasure requests usually involve no customer data held by us.</li>
+          <li><strong>Customers</strong> — to access, correct or delete personal information, customers should contact the merchant they purchased from, who manages that information in Shopify.</li>
+          <li><strong>Merchants</strong> — merchants can contact us about any privacy-related request using the details below.</li>
+        </ul>
+      </section>
+
+      <section id="third-party-services">
+        <div class="section-title">
+          <span class="section-num">8</span>
+          <h2 class="section-heading">Third-Party Services</h2>
+        </div>
+        <p>The App relies on Shopify, Senderum shipping services and Geoapify to provide its features. Information processed by Shopify and Geoapify is also subject to their own privacy policies.</p>
+      </section>
+
+      <section id="changes">
+        <div class="section-title">
+          <span class="section-num">9</span>
+          <h2 class="section-heading">Changes to This Privacy Policy</h2>
+        </div>
+        <p>We may update this Privacy Policy when the App or our practices change. The updated version will be published on this page with a new "Last updated" date.</p>
+      </section>
+
+      <section id="contact">
+        <div class="section-title">
+          <span class="section-num">10</span>
+          <h2 class="section-heading">Contact Us</h2>
+        </div>
+        <div class="contact-box">
+          <p class="company">Senderum B.V.</p>
+          <p>For privacy questions or requests, contact us at <a href="mailto:privacy@senderum.app">privacy@senderum.app</a>.</p>
+          <p>General support is available on our <a href="#">Support page</a>.</p>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <img src="assets/senderum-white-logo-full.svg" alt="Senderum">
+      <span>&copy; 2026 Senderum B.V. All rights reserved.</span>
+      <a href="mailto:privacy@senderum.app">privacy@senderum.app</a>
+    </div>
+  </footer>
+
+  <a class="back-top" href="#top" aria-label="Back to top">&uarr;</a>
+
+</body>
+</html>
